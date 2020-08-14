@@ -5,4 +5,4 @@ function introduce() {
   return name;
 }
 
-export { introduce };
+export default introduce;

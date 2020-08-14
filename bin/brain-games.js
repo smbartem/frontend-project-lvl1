@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { introduce } from '../src/cli.js';
-import readlineSync from 'readline-sync';
+import introduce from '../src/cli.js';
+
 console.log('Welcome to the Brain Games!');
-let name = introduce();
-console.log(`Hello, ${name}!`)
+const name = introduce();
+console.log(`Hello, ${name}!`);
