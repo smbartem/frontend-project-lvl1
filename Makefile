@@ -1,12 +1,13 @@
-install: install-deps
+install: 
+	npm install
 
-run: brain-games
+brain-games:
 	node bin/brain-games.js
 
-run: brain-even
+brain-even:
 	node bin/brain-even.js
 
-run: lint
+lint:
 	npx eslint .
 
 publish:
