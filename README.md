@@ -1,4 +1,4 @@
-"!https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability!":https://codeclimate.com/github/codeclimate/codeclimate/maintainability
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
-https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_NAME>/badge.svg
+https://github.com/smbartem/frontend-project-lvl1/workflows/README.md/badge.svg
 
