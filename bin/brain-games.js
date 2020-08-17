@@ -1,10 +1,31 @@
-import { introduce } from '../src/cli.js';
+import {
+  random, isItEven,
+} from '../src/cli.js';
 
-function welcome() {
-  console.log('Welcome to the Brain Games!');
-  const name = introduce();
-  console.log(`Hello, ${name}!`);
-  return name;
+function gameFunctionEven() {
+  const questionNum = random();
+  const rightAnswer = isItEven(questionNum);
+  console.log(`Question: ${questionNum}`);
+  return rightAnswer;
 }
 
-export default welcome;
+function gameFunctionCalc() {
+  const signs = ['+', '*', '-'];
+  const num1 = random(1, 10);
+  const num2 = random(1, 10);
+  const operand = signs[random(1, 3) - 1];
+  let rightAnswer;
+  if (operand === '+') {
+    rightAnswer = String(num1 + num2);
+  }
+  if (operand === '-') {
+    rightAnswer = String(num1 - num2);
+  }
+  if (operand === '*') {
+    rightAnswer = String(num1 * num2);
+  }
+  console.log(`Question: ${num1} ${operand} ${num2}`);
+  return rightAnswer;
+}
+
+export { gameFunctionEven, gameFunctionCalc };

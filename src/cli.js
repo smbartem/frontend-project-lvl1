@@ -10,9 +10,7 @@ function answer() {
   return name;
 }
 
-function random() {
-  const min = 1;
-  const max = 100;
+function random(min = 1, max = 99) {
   const rand = min - 0.5 + Math.random() * (max - min + 1);
   return Math.round(rand);
 }
@@ -24,6 +22,19 @@ function isItEven(num) {
   return 'yes';
 }
 
+function welcome() {
+  console.log('Welcome to the Brain Games!');
+  const name = introduce();
+  console.log(`Hello, ${name}!`);
+  return name;
+}
+
+function goodBy(result, name) {
+  if (result === 3) {
+    console.log(`Congratulations, ${name}!`);
+  }
+}
+
 export {
-  introduce, answer, random, isItEven,
+  introduce, answer, random, isItEven, welcome, goodBy,
 };
