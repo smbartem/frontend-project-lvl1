@@ -1,5 +1,5 @@
 import {
-  random, isItEven, GCD,
+  random, isItEven, GCD, isItPrime,
 } from '../src/cli.js';
 
 function gameFunctionEven() {
@@ -51,6 +51,13 @@ function gameFunctionProgression() {
   return rightAnswer;
 }
 
+function gameFunctionPrime() {
+  const num = random(1, 100);
+  const rightAnswer = String(isItPrime(num));
+  console.log(`Question: ${num}`);
+  return rightAnswer;
+}
+
 export {
-  gameFunctionEven, gameFunctionCalc, gameFunctionGCD, gameFunctionProgression,
+  gameFunctionEven, gameFunctionCalc, gameFunctionGCD, gameFunctionProgression, gameFunctionPrime,
 };
