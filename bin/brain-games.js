@@ -1,5 +1,5 @@
 import {
-  random, isItEven,
+  random, isItEven, GCD,
 } from '../src/cli.js';
 
 function gameFunctionEven() {
@@ -28,4 +28,12 @@ function gameFunctionCalc() {
   return rightAnswer;
 }
 
-export { gameFunctionEven, gameFunctionCalc };
+function gameFunctionGCD() {
+  const num1 = random(1, 100);
+  const num2 = random(1, 100);
+  const rightAnswer = String(GCD(num1, num2));
+  console.log(`Question: ${num1} ${num2}`);
+  return rightAnswer;
+}
+
+export { gameFunctionEven, gameFunctionCalc, gameFunctionGCD };

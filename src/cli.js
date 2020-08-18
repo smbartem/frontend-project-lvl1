@@ -35,6 +35,16 @@ function goodBy(result, name) {
   }
 }
 
+function GCD(x, y) {
+  if (y > x) {
+    return GCD(y, x);
+  }
+  if (!y) {
+    return x;
+  }
+  return GCD(y, x % y);
+}
+
 export {
-  introduce, answer, random, isItEven, welcome, goodBy,
+  introduce, answer, random, isItEven, welcome, goodBy, GCD,
 };
