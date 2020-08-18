@@ -36,4 +36,21 @@ function gameFunctionGCD() {
   return rightAnswer;
 }
 
-export { gameFunctionEven, gameFunctionCalc, gameFunctionGCD };
+function gameFunctionProgression() {
+  const arr = [];
+  const num1 = random(1, 10);
+  arr.push(num1);
+  const step = random(1, 10);
+  const hiddenNumber = random(1, 10);
+  for (let i = 0; i < 9; i += 1) {
+    arr.push(arr[i] + step);
+  }
+  const rightAnswer = String(arr[hiddenNumber]);
+  arr[hiddenNumber] = '..';
+  console.log(`Question: ${arr.join(' ')}`);
+  return rightAnswer;
+}
+
+export {
+  gameFunctionEven, gameFunctionCalc, gameFunctionGCD, gameFunctionProgression,
+};
