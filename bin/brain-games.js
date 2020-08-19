@@ -38,10 +38,10 @@ function gameFunctionGCD() {
 
 function gameFunctionProgression() {
   const arr = [];
-  const num1 = random(1, 10);
+  const num1 = random(1, 100);
   arr.push(num1);
-  const step = random(1, 10);
-  const hiddenNumber = random(1, 10);
+  const step = random(1, 100);
+  const hiddenNumber = random(0, 9);
   for (let i = 0; i < 9; i += 1) {
     arr.push(arr[i] + step);
   }
