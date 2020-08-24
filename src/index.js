@@ -1,14 +1,16 @@
-import {
-  answer, welcome, goodBy,
-} from './cli.js';
+import readlineSync from 'readline-sync';
 
-function engine(description, gameFunction) {
-  const name = welcome();
+const engine = (description, gameFunction) => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
   console.log(description);
   let result;
   for (result = 0; result < 3; result += 1) {
-    const rightAnswer = gameFunction();
-    const ans = answer();
+    const innerFuncRes = gameFunction();
+    const rightAnswer = innerFuncRes.value;
+    console.log(innerFuncRes.question);
+    const ans = readlineSync.question('Your answer: ');
     if (ans === rightAnswer) {
       console.log('Correct!');
     } else {
@@ -19,7 +21,9 @@ function engine(description, gameFunction) {
       return;
     }
   }
-  goodBy(result, name);
-}
+  if (result === 3) {
+    console.log(`Congratulations, ${name}!`);
+  }
+};
 
 export default engine;
