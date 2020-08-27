@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGameFunctionGCD from './games/game-logic-brain-gcd.js';
+import startGameGCD from '../src/games/game-logic-brain-gcd.js';
 
-startGameFunctionGCD();
+startGameGCD();

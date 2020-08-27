@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import startGameFunctionPrime from './games/game-logic-brain-prime.js';
+import startGamePrime from '../src/games/game-logic-brain-prime.js';
 
-startGameFunctionPrime();
+startGamePrime();

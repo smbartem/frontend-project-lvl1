@@ -1,6 +1,3 @@
-const random = (min = 1, max = 99) => {
-  const rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand);
-};
+const random = (min = 1, max = 99) => Math.floor(min + Math.random() * (max + 1 - min));
 
 export default random;
