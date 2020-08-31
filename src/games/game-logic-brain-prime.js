@@ -3,21 +3,21 @@ import run from '../index.js';
 
 const isPrime = (num) => {
   if (num <= 1) {
-    return 'no';
+    return false;
   }
   for (let i = 2; i * i <= num; i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const genGameData = () => {
   const num = random(1, 100);
   return {
-    rightAnswer: String(isPrime(num)),
-    question: `${num}`,
+    rightAnswer: isPrime(num) === true ? 'yes' : 'no',
+    question: String(num),
   };
 };
 

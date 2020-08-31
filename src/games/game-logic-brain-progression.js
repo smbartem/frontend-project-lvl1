@@ -1,20 +1,27 @@
 import random from '../utils.js';
 import run from '../index.js';
 
-const genGameData = () => {
-  const arr = [];
-  const num1 = random(1, 10);
-  arr.push(num1);
-  const step = random(1, 10);
-  const hiddenNumber = random(0, 9);
-  for (let i = 0; i < 9; i += 1) {
-    arr.push(arr[i] + step);
+const progressionLength = 9;
+
+const genProgression = (firstElement, step, length) => {
+  const progression = [];
+  progression.push(firstElement);
+  for (let i = 0; i < length; i += 1) {
+    progression.push(progression[i] + step);
   }
-  const rightAnswer = String(arr[hiddenNumber]);
-  arr[hiddenNumber] = '..';
+  return progression;
+};
+
+const genGameData = () => {
+  const firstElement = random(1, 10);
+  const step = random(1, 10);
+  const hiddenNumber = random(0, progressionLength);
+  const progression = genProgression(firstElement, step, progressionLength);
+  const rightAnswer = String(progression[hiddenNumber]);
+  progression[hiddenNumber] = '..';
   return {
     rightAnswer,
-    question: `${arr.join(' ')}`,
+    question: progression.join(' '),
   };
 };
 

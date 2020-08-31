@@ -2,9 +2,6 @@ import random from '../utils.js';
 import run from '../index.js';
 
 const findGCD = (x, y) => {
-  if (y > x) {
-    return findGCD(y, x);
-  }
   if (!y) {
     return x;
   }

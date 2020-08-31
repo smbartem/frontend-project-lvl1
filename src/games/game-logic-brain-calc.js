@@ -1,24 +1,28 @@
 import random from '../utils.js';
 import run from '../index.js';
 
+const signs = ['+', '*', '-'];
+
+const calculateRightAnswer = (num1, num2, sign) => {
+  switch (sign) {
+    case '+':
+      return String(num1 + num2);
+    case '-':
+      return String(num1 - num2);
+    case '*':
+      return String(num1 * num2);
+    default:
+      throw new Error('Unknown mathematical sign in expression!');
+  }
+};
+
 const genGameData = () => {
-  const signs = ['+', '*', '-'];
   const num1 = random(1, 10);
   const num2 = random(1, 10);
-  const operand = signs[random(1, 3) - 1];
-  let rightAnswer;
-  if (operand === '+') {
-    rightAnswer = String(num1 + num2);
-  }
-  if (operand === '-') {
-    rightAnswer = String(num1 - num2);
-  }
-  if (operand === '*') {
-    rightAnswer = String(num1 * num2);
-  }
+  const sign = signs[random(1, 3) - 1];
   return {
-    rightAnswer,
-    question: `${num1} ${operand} ${num2}`,
+    rightAnswer: calculateRightAnswer(num1, num2, sign),
+    question: `${num1} ${sign} ${num2}`,
   };
 };
 
