@@ -6,7 +6,7 @@ const isEven = (num) => (num % 2 === 0);
 const genGameData = () => {
   const question = random();
   return {
-    rightAnswer: isEven(question) === true ? 'yes' : 'no',
+    rightAnswer: isEven(question) ? 'yes' : 'no',
     question: String(question),
   };
 };

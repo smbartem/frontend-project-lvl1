@@ -1,13 +1,12 @@
 import random from '../utils.js';
 import run from '../index.js';
 
-const progressionLength = 9;
+const progressionLength = 10;
 
 const genProgression = (firstElement, step, length) => {
   const progression = [];
-  progression.push(firstElement);
   for (let i = 0; i < length; i += 1) {
-    progression.push(progression[i] + step);
+    progression.push(firstElement + step * i);
   }
   return progression;
 };
