@@ -14,7 +14,7 @@ const genProgression = (firstElement, step, length) => {
 const genGameData = () => {
   const firstElement = random(1, 10);
   const step = random(1, 10);
-  const hiddenNumber = random(0, progressionLength);
+  const hiddenNumber = random(0, progressionLength - 1);
   const progression = genProgression(firstElement, step, progressionLength);
   const rightAnswer = String(progression[hiddenNumber]);
   progression[hiddenNumber] = '..';
